@@ -1,11 +1,59 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { submitLead } from '@/features/leads/actions';
 
 export default function DemoContactOptions() {
-  const handleSubmit = (e: React.FormEvent) => {
+  const router = useRouter();
+  
+  // Form states
+  const [name, setName] = useState('');
+  const [clinicName, setClinicName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [city, setCity] = useState('');
+  const [message, setMessage] = useState('');
+  
+  // Status states
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Visual only, no backend submission
+    setErrorMsg(null);
+    setIsSubmitting(true);
+
+    try {
+      const res = await submitLead({
+        name,
+        clinic_name: clinicName,
+        email,
+        phone,
+        city,
+        message,
+      });
+
+      if (res.success) {
+        // Reset form
+        setName('');
+        setClinicName('');
+        setEmail('');
+        setPhone('');
+        setCity('');
+        setMessage('');
+        
+        // Redirect to /gracias
+        router.push('/gracias');
+      } else {
+        setErrorMsg(res.error || 'Ocurrió un error inesperado al enviar los datos.');
+      }
+    } catch (err) {
+      console.error('Unhandled submit error:', err);
+      setErrorMsg('Error de conexión. Por favor, revisa tu red e inténtalo de nuevo.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -47,8 +95,11 @@ export default function DemoContactOptions() {
                       type="text" 
                       id="nombre" 
                       placeholder="Tu nombre" 
-                      className="w-full p-3.5 rounded-xl border border-slate-200 text-sm text-primary placeholder-slate-400 bg-[#FAFAFA] focus:bg-white focus:outline-none focus:ring-1 focus:ring-accent focus:border-accent transition-all font-medium"
+                      className="w-full p-3.5 rounded-xl border border-slate-200 text-sm text-primary placeholder-slate-400 bg-[#FAFAFA] focus:bg-white focus:outline-none focus:ring-1 focus:ring-accent focus:border-accent transition-all font-medium disabled:opacity-60"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
                       required
+                      disabled={isSubmitting}
                     />
                   </div>
                   <div>
@@ -57,8 +108,11 @@ export default function DemoContactOptions() {
                       type="text" 
                       id="consultorio" 
                       placeholder="Nombre de tu consultorio" 
-                      className="w-full p-3.5 rounded-xl border border-slate-200 text-sm text-primary placeholder-slate-400 bg-[#FAFAFA] focus:bg-white focus:outline-none focus:ring-1 focus:ring-accent focus:border-accent transition-all font-medium"
+                      className="w-full p-3.5 rounded-xl border border-slate-200 text-sm text-primary placeholder-slate-400 bg-[#FAFAFA] focus:bg-white focus:outline-none focus:ring-1 focus:ring-accent focus:border-accent transition-all font-medium disabled:opacity-60"
+                      value={clinicName}
+                      onChange={(e) => setClinicName(e.target.value)}
                       required
+                      disabled={isSubmitting}
                     />
                   </div>
                 </div>
@@ -70,8 +124,11 @@ export default function DemoContactOptions() {
                       type="email" 
                       id="correo" 
                       placeholder="tu@correo.com" 
-                      className="w-full p-3.5 rounded-xl border border-slate-200 text-sm text-primary placeholder-slate-400 bg-[#FAFAFA] focus:bg-white focus:outline-none focus:ring-1 focus:ring-accent focus:border-accent transition-all font-medium"
+                      className="w-full p-3.5 rounded-xl border border-slate-200 text-sm text-primary placeholder-slate-400 bg-[#FAFAFA] focus:bg-white focus:outline-none focus:ring-1 focus:ring-accent focus:border-accent transition-all font-medium disabled:opacity-60"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       required
+                      disabled={isSubmitting}
                     />
                   </div>
                   <div>
@@ -80,8 +137,11 @@ export default function DemoContactOptions() {
                       type="tel" 
                       id="whatsapp" 
                       placeholder="Tu número de WhatsApp" 
-                      className="w-full p-3.5 rounded-xl border border-slate-200 text-sm text-primary placeholder-slate-400 bg-[#FAFAFA] focus:bg-white focus:outline-none focus:ring-1 focus:ring-accent focus:border-accent transition-all font-medium"
+                      className="w-full p-3.5 rounded-xl border border-slate-200 text-sm text-primary placeholder-slate-400 bg-[#FAFAFA] focus:bg-white focus:outline-none focus:ring-1 focus:ring-accent focus:border-accent transition-all font-medium disabled:opacity-60"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
                       required
+                      disabled={isSubmitting}
                     />
                   </div>
                 </div>
@@ -92,8 +152,11 @@ export default function DemoContactOptions() {
                     type="text" 
                     id="ciudad" 
                     placeholder="Ciudad y estado" 
-                    className="w-full p-3.5 rounded-xl border border-slate-200 text-sm text-primary placeholder-slate-400 bg-[#FAFAFA] focus:bg-white focus:outline-none focus:ring-1 focus:ring-accent focus:border-accent transition-all font-medium"
+                    className="w-full p-3.5 rounded-xl border border-slate-200 text-sm text-primary placeholder-slate-400 bg-[#FAFAFA] focus:bg-white focus:outline-none focus:ring-1 focus:ring-accent focus:border-accent transition-all font-medium disabled:opacity-60"
+                    value={city}
+                    onChange={(e) => setCity(e.target.value)}
                     required
+                    disabled={isSubmitting}
                   />
                 </div>
 
@@ -103,15 +166,25 @@ export default function DemoContactOptions() {
                     id="mensaje" 
                     rows={3}
                     placeholder="Cuéntanos qué te gustaría mejorar en tu consultorio" 
-                    className="w-full p-3.5 rounded-xl border border-slate-200 text-sm text-primary placeholder-slate-400 bg-[#FAFAFA] focus:bg-white focus:outline-none focus:ring-1 focus:ring-accent focus:border-accent transition-all font-medium resize-none"
+                    className="w-full p-3.5 rounded-xl border border-slate-200 text-sm text-primary placeholder-slate-400 bg-[#FAFAFA] focus:bg-white focus:outline-none focus:ring-1 focus:ring-accent focus:border-accent transition-all font-medium resize-none disabled:opacity-60"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    disabled={isSubmitting}
                   />
                 </div>
 
+                {errorMsg && (
+                  <div className="p-4 rounded-xl bg-red-50 border border-red-150 text-red-600 text-xs font-semibold leading-relaxed">
+                    {errorMsg}
+                  </div>
+                )}
+
                 <button 
                   type="submit"
-                  className="w-full mt-2 py-4 px-6 rounded-xl bg-primary text-white font-semibold text-base shadow-md shadow-primary/10 hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-0.5 transition-all duration-300"
+                  disabled={isSubmitting}
+                  className="w-full mt-2 py-4 px-6 rounded-xl bg-primary text-white font-semibold text-base shadow-md shadow-primary/10 hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0"
                 >
-                  Solicitar mi demo
+                  {isSubmitting ? 'Enviando...' : 'Solicitar mi demo'}
                 </button>
               </form>
             </div>

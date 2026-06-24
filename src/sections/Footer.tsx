@@ -98,8 +98,8 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row sm:items-center gap-6">
             <div>
               <span className="font-semibold text-primary block sm:inline mr-1">Contacto:</span>
-              <a href="mailto:contacto@madent.com.mx" className="hover:text-primary transition-colors duration-300">
-                contacto@madent.com.mx
+              <a href="mailto:hola@madent.com.mx" className="hover:text-primary transition-colors duration-300">
+                hola@madent.com.mx
               </a>
             </div>
             <div>
