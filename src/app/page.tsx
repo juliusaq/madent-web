@@ -1,4 +1,5 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import Header from '@/sections/Header';
 import Hero from '@/sections/Hero';
 import ProblemSection from '@/sections/ProblemSection';
@@ -8,6 +9,14 @@ import HowItWorksSection from '@/sections/HowItWorksSection';
 import EmotionalSection from '@/sections/EmotionalSection';
 import FinalCTASection from '@/sections/FinalCTASection';
 import Footer from '@/sections/Footer';
+
+export const metadata: Metadata = {
+  title: 'MADENT | Software para Odontólogos Independientes',
+  description: 'Organiza tu consultorio dental con más orden y tranquilidad. Agenda citas, expedientes clínicos, odontograma interactivo y presupuestos desde un solo lugar.',
+  alternates: {
+    canonical: '/',
+  },
+};
 
 export default function Home() {
   return (

@@ -11,6 +11,9 @@ import Footer from '@/sections/Footer';
 export const metadata: Metadata = {
   title: 'Planes | MADENT - Software para Odontólogos Independientes',
   description: 'Conoce los planes de MADENT y descubre cómo organizar tu consultorio con una plataforma diseñada para odontólogos independientes.',
+  alternates: {
+    canonical: '/planes',
+  },
 };
 
 export default function PlanesPage() {

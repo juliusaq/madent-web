@@ -13,6 +13,9 @@ import Footer from '@/sections/Footer';
 export const metadata: Metadata = {
   title: 'Nosotros | MADENT - Software para Odontólogos Independientes',
   description: 'Conoce por qué existe MADENT, una plataforma creada para ayudar a odontólogos independientes a organizar, administrar y hacer crecer su consultorio dental.',
+  alternates: {
+    canonical: '/nosotros',
+  },
 };
 
 export default function NosotrosPage() {

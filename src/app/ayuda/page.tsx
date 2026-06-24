@@ -11,6 +11,9 @@ import Footer from '@/sections/Footer';
 export const metadata: Metadata = {
   title: 'Centro de Ayuda | MADENT',
   description: 'Guías y respuestas para aprovechar mejor las herramientas de MADENT.',
+  alternates: {
+    canonical: '/ayuda',
+  },
 };
 
 export default function AyudaPage() {

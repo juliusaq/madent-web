@@ -11,6 +11,9 @@ import Footer from '@/sections/Footer';
 export const metadata: Metadata = {
   title: 'Blog | MADENT - Recursos para Odontólogos Independientes',
   description: 'Guías y recursos para odontólogos independientes sobre gestión del consultorio, expedientes clínicos digitales, odontograma, marketing dental y prevención.',
+  alternates: {
+    canonical: '/blog',
+  },
 };
 
 export default function BlogPage() {

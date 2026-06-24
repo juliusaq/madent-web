@@ -9,6 +9,9 @@ import Footer from '@/sections/Footer';
 export const metadata: Metadata = {
   title: 'Funciones | MADENT - Software para odontólogos independientes',
   description: 'Descubre las herramientas de MADENT diseñadas para simplificar la gestión clínica y administrativa: agenda inteligente, expedientes clínicos, odontograma interactivo y más.',
+  alternates: {
+    canonical: '/funciones',
+  },
 };
 
 export default function FuncionesPage() {

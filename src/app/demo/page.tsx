@@ -11,6 +11,9 @@ import Footer from '@/sections/Footer';
 export const metadata: Metadata = {
   title: 'Demo | MADENT - Software para Odontólogos Independientes',
   description: 'Agenda una demostración de MADENT y descubre cómo organizar tu consultorio dental con agenda, expedientes clínicos, odontograma, presupuestos y portal del paciente.',
+  alternates: {
+    canonical: '/demo',
+  },
 };
 
 export default function DemoPage() {
