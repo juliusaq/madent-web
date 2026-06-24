@@ -32,6 +32,9 @@ export default function Header() {
           <Link href="/nosotros" className="hover:text-primary transition-colors duration-200">
             Nosotros
           </Link>
+          <Link href="/planes" className="hover:text-primary transition-colors duration-200">
+            Planes
+          </Link>
         </nav>
 
         {/* Action Button */}

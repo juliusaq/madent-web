@@ -40,7 +40,9 @@ export default function Footer() {
                 <a href="#solucion" className="hover:text-primary transition-colors duration-300">Odontograma</a>
               </li>
               <li>
-                <span className="text-slate-400 cursor-not-allowed">Precios (Próximamente)</span>
+                <Link href="/planes" className="hover:text-primary transition-colors duration-300">
+                  Planes
+                </Link>
               </li>
             </ul>
           </div>
