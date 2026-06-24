@@ -1,6 +1,8 @@
 import React from 'react';
+import ProductScreenshot from '@/components/ProductScreenshot';
 
 export default function FeatureList() {
+  const hasRealScreenshots = false;
   const features = [
     {
       id: "agenda",
@@ -348,7 +350,13 @@ export default function FeatureList() {
                 <div className="w-full md:w-1/2 flex items-center justify-center">
                   <div className="w-full max-w-md aspect-[4/3] relative">
                     {/* Visual box wrapper */}
-                    {feature.mockup}
+                    <ProductScreenshot
+                      src={`/screenshots/${feature.id}.webp`}
+                      alt={feature.title}
+                      title={feature.title}
+                      fallback={feature.mockup}
+                      hasRealScreenshots={hasRealScreenshots}
+                    />
                   </div>
                 </div>
               </div>

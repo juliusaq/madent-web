@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 export default function FinalCTASection() {
   return (
@@ -22,7 +23,10 @@ export default function FinalCTASection() {
           </p>
 
           {/* CTA Button - High contrast, highly visible */}
-          <button className="group relative w-full sm:w-auto px-10 py-5 rounded-xl bg-primary text-white font-semibold text-base shadow-xl shadow-primary/15 hover:shadow-2xl hover:shadow-primary/25 transition-all duration-300 transform hover:-translate-y-0.5 overflow-hidden">
+          <Link 
+            href="/demo" 
+            className="group relative w-full sm:w-auto px-10 py-5 rounded-xl bg-primary text-white font-semibold text-base text-center shadow-xl shadow-primary/15 hover:shadow-2xl hover:shadow-primary/25 transition-all duration-300 transform hover:-translate-y-0.5 overflow-hidden block"
+          >
             <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <span className="relative z-10 flex items-center justify-center gap-2">
               Solicitar demostración
@@ -30,7 +34,7 @@ export default function FinalCTASection() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
               </svg>
             </span>
-          </button>
+          </Link>
         </div>
 
       </div>

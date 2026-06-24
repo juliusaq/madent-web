@@ -33,12 +33,12 @@ export default function Header() {
 
         {/* Action Button */}
         <div className="flex items-center gap-4">
-          <a 
-            href="#contacto" 
+          <Link 
+            href="/demo" 
             className="px-5 py-2.5 rounded-lg bg-primary text-white font-medium text-sm hover:bg-accent hover:shadow-md hover:shadow-accent/15 transition-all duration-300 transform hover:-translate-y-0.5"
           >
             Solicitar demo
-          </a>
+          </Link>
         </div>
       </div>
     </header>
