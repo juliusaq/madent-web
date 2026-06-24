@@ -71,7 +71,9 @@ export default function Footer() {
             </h4>
             <ul className="flex flex-col gap-3 text-sm text-text font-medium">
               <li>
-                <span className="text-slate-400">Blog</span>
+                <Link href="/blog" className="hover:text-primary transition-colors duration-300">
+                  Blog
+                </Link>
               </li>
               <li>
                 <span className="text-slate-400">Guías para odontólogos</span>

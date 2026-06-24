@@ -16,7 +16,7 @@ export default function Header() {
         </Link>
 
         {/* Navigation Links - Hidden on Mobile */}
-        <nav className="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium text-text">
+        <nav className="hidden md:flex items-center gap-4 lg:gap-6 xl:gap-8 text-sm font-medium text-text">
           <Link href="/#problema" className="hover:text-primary transition-colors duration-200">
             El Problema
           </Link>
@@ -34,6 +34,9 @@ export default function Header() {
           </Link>
           <Link href="/planes" className="hover:text-primary transition-colors duration-200">
             Planes
+          </Link>
+          <Link href="/blog" className="hover:text-primary transition-colors duration-200">
+            Blog
           </Link>
         </nav>
 
