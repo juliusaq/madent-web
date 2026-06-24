@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MADENT Web
 
-## Getting Started
+Sitio web oficial de **MADENT**, una plataforma SaaS diseñada para odontólogos independientes y consultorios dentales pequeños.
 
-First, run the development server:
+## 🚀 Filosofía
+> **Menos administración. Más odontología.**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Nuestra visión es ayudar a los odontólogos independientes a construir consultorios más organizados, humanos y sostenibles, liberándolos de la carga administrativa para que se enfoquen en la salud de sus pacientes.
+
+---
+
+## 🛠️ Stack Tecnológico
+- **Framework:** Next.js 15 (App Router)
+- **Lenguaje:** TypeScript
+- **Estilos:** Tailwind CSS v4
+- **Despliegue:** Vercel
+
+---
+
+## 📂 Estructura del Proyecto
+
+```text
+madent-web/
+├── public/                  # Archivos públicos estáticos
+│   ├── icons/               # Iconos SVG y del sitio
+│   ├── images/              # Imágenes generales
+│   └── screenshots/         # Capturas de pantalla
+├── src/
+│   ├── app/                 # Configuración del App Router (Layouts y Rutas principales)
+│   │   ├── globals.css      # Estilos globales y variables de Tailwind CSS v4
+│   │   ├── layout.tsx       # Layout principal de la aplicación con tipografía Inter
+│   │   └── page.tsx         # Página principal ensamblada con componentes de sección
+│   ├── components/          # Componentes de interfaz de usuario reutilizables (UI)
+│   ├── sections/            # Secciones modulares de la landing page
+│   │   ├── Header.tsx       # Navegación con efecto Glassmorphism
+│   │   ├── Hero.tsx         # Portada con mockup interactivo en CSS
+│   │   ├── ProblemSection.tsx
+│   │   ├── SolutionSection.tsx
+│   │   ├── BenefitsSection.tsx
+│   │   ├── HowItWorksSection.tsx
+│   │   ├── EmotionalSection.tsx
+│   │   ├── FinalCTASection.tsx
+│   │   └── Footer.tsx
+│   ├── lib/                 # Utilidades comunes y librerías externas
+│   └── styles/              # Estilos personalizados o globales
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 💻 Desarrollo Local
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Instalar dependencias
+```bash
+npm install
+```
 
-## Learn More
+### Iniciar servidor de desarrollo
+```bash
+npm run dev
+```
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver el resultado.
 
-To learn more about Next.js, take a look at the following resources:
+### Validaciones y Compilación
+Para validar tipos, linter y realizar una compilación estática de prueba de producción:
+```bash
+npm run build
+npm run lint
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🌐 Producción
+Sitio oficial de producción: [https://madent.com.mx](https://madent.com.mx)
