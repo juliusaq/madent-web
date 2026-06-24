@@ -20,8 +20,8 @@ export default function Header() {
           <Link href="/funciones" className="hover:text-primary transition-colors duration-200">
             Funciones
           </Link>
-          <Link href="/nosotros" className="hover:text-primary transition-colors duration-200">
-            Nosotros
+          <Link href="/experiencias" className="hover:text-primary transition-colors duration-200">
+            Experiencias
           </Link>
           <Link href="/planes" className="hover:text-primary transition-colors duration-200">
             Planes

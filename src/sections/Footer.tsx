@@ -59,6 +59,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/experiencias" className="hover:text-primary transition-colors duration-300">
+                  Experiencias
+                </Link>
+              </li>
+              <li>
                 <span className="text-slate-400">Carreras</span>
               </li>
             </ul>

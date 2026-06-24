@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/planes', priority: 0.8 },
     { url: '/blog', priority: 0.8 },
     { url: '/ayuda', priority: 0.8 },
+    { url: '/experiencias', priority: 0.8 },
   ];
 
   return routes.map((route) => ({
