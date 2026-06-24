@@ -25,7 +25,7 @@ export default function ProblemSection() {
       description: "Confiar en tu memoria para recordar quién tiene pagos pendientes, quién necesita cita de control o a quién debes enviar una receta.",
       icon: (
         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0x" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0" />
         </svg>
       )
     },
@@ -41,15 +41,15 @@ export default function ProblemSection() {
   ];
 
   return (
-    <section id="problema" className="py-24 sm:py-32 bg-white relative">
+    <section id="problema" className="py-32 sm:py-40 bg-white relative">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-16 sm:mb-20">
-          <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block mb-3">
+        <div className="max-w-3xl mb-20 sm:mb-24">
+          <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block mb-4">
             La realidad del día a día
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary tracking-tight leading-tight">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary tracking-tight leading-[1.1]">
             Tu consultorio merece algo mejor que hojas, Excel y mensajes perdidos.
           </h2>
         </div>
@@ -59,10 +59,10 @@ export default function ProblemSection() {
           {problems.map((problem, idx) => (
             <div 
               key={idx}
-              className="p-8 rounded-2xl bg-[#FAFAFA] border border-slate-100 flex flex-col justify-between transition-all duration-300 hover:shadow-sm hover:border-slate-200/80 group"
+              className="p-8 sm:p-10 rounded-[28px] bg-[#FAFAFA]/70 border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.01)] flex flex-col justify-between transition-all duration-500 hover:shadow-[0_24px_60px_-15px_rgba(15,23,42,0.04)] hover:border-slate-200/80 hover:bg-white hover:-translate-y-1 group"
             >
               <div>
-                <div className="w-12 h-12 rounded-xl bg-slate-900/5 text-primary flex items-center justify-center mb-6 group-hover:scale-105 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                <div className="w-12 h-12 rounded-xl bg-slate-900/5 text-primary flex items-center justify-center mb-8 group-hover:scale-105 group-hover:bg-primary group-hover:text-white transition-all duration-500">
                   {problem.icon}
                 </div>
                 <h3 className="text-xl font-bold text-primary mb-3">

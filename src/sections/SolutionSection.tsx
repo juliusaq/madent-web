@@ -77,15 +77,15 @@ export default function SolutionSection() {
   ];
 
   return (
-    <section id="solucion" className="py-24 sm:py-32 bg-[#FAFAFA] relative border-y border-slate-100/50">
+    <section id="solucion" className="py-32 sm:py-40 bg-[#FAFAFA] relative border-y border-slate-100">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-16 sm:mb-20">
-          <span className="text-xs font-bold text-accent uppercase tracking-widest block mb-3">
+        <div className="max-w-3xl mb-20 sm:mb-24">
+          <span className="text-xs font-bold text-accent uppercase tracking-widest block mb-4">
             Plataforma Integral
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary tracking-tight leading-tight">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary tracking-tight leading-[1.1]">
             Todo lo que necesitas para administrar tu consultorio en un solo lugar.
           </h2>
         </div>
@@ -95,13 +95,13 @@ export default function SolutionSection() {
           {modules.map((module, idx) => (
             <div 
               key={idx}
-              className="p-6 rounded-2xl bg-white border border-slate-100 flex flex-col justify-between transition-all duration-300 hover:shadow-sm hover:-translate-y-0.5"
+              className="p-8 rounded-[24px] bg-white border border-slate-100/80 shadow-[0_4px_20px_rgba(0,0,0,0.005)] flex flex-col justify-between transition-all duration-500 hover:shadow-[0_20px_50px_rgba(15,23,42,0.03)] hover:border-slate-200 hover:-translate-y-1 group"
             >
               <div>
-                <div className="w-10 h-10 rounded-lg bg-accent/10 text-accent flex items-center justify-center mb-5">
+                <div className="w-10 h-10 rounded-xl bg-accent/10 text-accent flex items-center justify-center mb-6 group-hover:scale-105 group-hover:bg-accent group-hover:text-white transition-all duration-500">
                   {module.icon}
                 </div>
-                <h3 className="text-base font-bold text-primary mb-2">
+                <h3 className="text-base font-bold text-primary mb-2.5">
                   {module.title}
                 </h3>
                 <p className="text-text text-sm leading-relaxed">

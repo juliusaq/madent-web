@@ -2,41 +2,41 @@ import React from 'react';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#FAFAFA] border-t border-slate-100 py-16 sm:py-20 relative">
+    <footer className="bg-[#FAFAFA] border-t border-slate-200/50 pt-24 pb-16 relative">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
         
         {/* Footer Top Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 lg:gap-12 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-12 lg:gap-16 mb-20">
           
-          {/* Brand Column (Span 2 on medium screens for balance) */}
+          {/* Brand Column (Spans 2 columns for clean weighting) */}
           <div className="col-span-2 flex flex-col items-start gap-4">
             <a href="#" className="flex items-center gap-2.5 group">
-              <span className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center font-bold text-white text-sm shadow-md group-hover:scale-105 transition-transform duration-300">
+              <span className="h-9 w-9 rounded-xl bg-primary flex items-center justify-center font-bold text-white text-base shadow-lg shadow-primary/10 group-hover:scale-105 transition-transform duration-300">
                 M
               </span>
-              <span className="text-lg font-extrabold text-primary tracking-tight">
+              <span className="text-xl font-extrabold text-primary tracking-tight">
                 MADENT
               </span>
             </a>
-            <p className="text-text text-sm leading-relaxed max-w-xs mt-2">
+            <p className="text-text text-sm leading-relaxed max-w-xs mt-3">
               La plataforma de gestión moderna diseñada específicamente para odontólogos independientes que buscan ordenar y hacer crecer su práctica.
             </p>
           </div>
 
           {/* Column 1: Producto */}
           <div>
-            <h4 className="text-xs font-bold text-primary uppercase tracking-widest mb-4">
+            <h4 className="text-[11px] font-bold text-primary uppercase tracking-widest mb-5">
               Producto
             </h4>
-            <ul className="flex flex-col gap-2.5 text-sm text-text">
+            <ul className="flex flex-col gap-3 text-sm text-text font-medium">
               <li>
-                <a href="#solucion" className="hover:text-primary transition-colors">Funciones</a>
+                <a href="#solucion" className="hover:text-primary transition-colors duration-300">Funciones</a>
               </li>
               <li>
-                <a href="#solucion" className="hover:text-primary transition-colors">Agenda</a>
+                <a href="#solucion" className="hover:text-primary transition-colors duration-300">Agenda</a>
               </li>
               <li>
-                <a href="#solucion" className="hover:text-primary transition-colors">Odontograma</a>
+                <a href="#solucion" className="hover:text-primary transition-colors duration-300">Odontograma</a>
               </li>
               <li>
                 <span className="text-slate-400 cursor-not-allowed">Precios (Próximamente)</span>
@@ -46,10 +46,10 @@ export default function Footer() {
 
           {/* Column 2: Empresa */}
           <div>
-            <h4 className="text-xs font-bold text-primary uppercase tracking-widest mb-4">
+            <h4 className="text-[11px] font-bold text-primary uppercase tracking-widest mb-5">
               Empresa
             </h4>
-            <ul className="flex flex-col gap-2.5 text-sm text-text">
+            <ul className="flex flex-col gap-3 text-sm text-text font-medium">
               <li>
                 <span className="text-slate-400">Sobre nosotros</span>
               </li>
@@ -61,10 +61,10 @@ export default function Footer() {
 
           {/* Column 3: Recursos */}
           <div>
-            <h4 className="text-xs font-bold text-primary uppercase tracking-widest mb-4">
+            <h4 className="text-[11px] font-bold text-primary uppercase tracking-widest mb-5">
               Recursos
             </h4>
-            <ul className="flex flex-col gap-2.5 text-sm text-text">
+            <ul className="flex flex-col gap-3 text-sm text-text font-medium">
               <li>
                 <span className="text-slate-400">Blog</span>
               </li>
@@ -80,11 +80,11 @@ export default function Footer() {
         </div>
 
         {/* Contact Info Section */}
-        <div className="border-t border-slate-100 pt-8 pb-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 text-sm text-text">
+        <div className="border-t border-slate-200/50 pt-8 pb-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 text-sm text-text border-b">
           <div className="flex flex-col sm:flex-row sm:items-center gap-6">
             <div>
               <span className="font-semibold text-primary block sm:inline mr-1">Contacto:</span>
-              <a href="mailto:contacto@madent.com.mx" className="hover:text-primary transition-colors">
+              <a href="mailto:contacto@madent.com.mx" className="hover:text-primary transition-colors duration-300">
                 contacto@madent.com.mx
               </a>
             </div>
@@ -95,12 +95,12 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Footer Bottom (Copyright / Legals) */}
-        <div className="border-t border-slate-100 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-text">
+        {/* Footer Bottom (Copyright & legal link styling) */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-text font-medium">
           <p>&copy; {new Date().getFullYear()} MADENT. Todos los derechos reservados.</p>
           <div className="flex items-center gap-6">
-            <span className="hover:text-primary cursor-pointer transition-colors">Términos de servicio</span>
-            <span className="hover:text-primary cursor-pointer transition-colors">Política de privacidad</span>
+            <span className="hover:text-primary cursor-pointer transition-colors duration-300">Términos de servicio</span>
+            <span className="hover:text-primary cursor-pointer transition-colors duration-300">Política de privacidad</span>
           </div>
         </div>
 
