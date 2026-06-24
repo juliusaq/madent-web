@@ -1,25 +1,7 @@
 import React from 'react';
 
 export default function SolutionSection() {
-  const modules = [
-    {
-      title: "Agenda",
-      description: "Citas con estados (confirmada, cancelada, en sala), arrastrar y soltar, sincronización inteligente y envío automático de recordatorios por WhatsApp.",
-      icon: (
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-        </svg>
-      )
-    },
-    {
-      title: "Expediente clínico",
-      description: "Fichas clínicas digitales y completas de cada paciente. Centraliza antecedentes, evolución de tratamientos, alergias y notas en un solo lugar seguro.",
-      icon: (
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-        </svg>
-      )
-    },
+  const secondaryModules = [
     {
       title: "Odontograma",
       description: "Mapa dental interactivo para registrar diagnósticos y evolución de tratamientos pieza por pieza de forma gráfica e intuitiva.",
@@ -90,18 +72,112 @@ export default function SolutionSection() {
           </h2>
         </div>
 
-        {/* Modules Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {modules.map((module, idx) => (
+        {/* Bento Grid Layout (Stripe style) */}
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-6 mb-8">
+          
+          {/* Bento Card 1: Agenda (Featured - col-span-3) */}
+          <div className="md:col-span-3 p-8 rounded-[32px] bg-white border border-slate-100 shadow-[0_4px_30px_rgba(0,0,0,0.005)] flex flex-col justify-between transition-all duration-500 hover:shadow-[0_24px_50px_rgba(15,23,42,0.03)] hover:border-slate-200/80 group overflow-hidden relative">
+            <div className="absolute top-0 right-0 w-48 h-48 bg-accent/5 rounded-full blur-2xl pointer-events-none" />
+            
+            <div className="relative z-10 flex-1 flex flex-col justify-between">
+              <div>
+                <div className="w-12 h-12 rounded-2xl bg-accent/10 text-accent flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-500">
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-extrabold text-primary mb-3">
+                  Agenda
+                </h3>
+                <p className="text-text text-base leading-relaxed max-w-sm mb-8">
+                  Citas con estados (confirmada, en sala, atendido), arrastrar y soltar, sincronización inteligente y recordatorios automáticos por WhatsApp.
+                </p>
+              </div>
+
+              {/* Agenda Miniature UI Mockup */}
+              <div className="mt-2 p-4 rounded-2xl bg-[#FAFAFA] border border-slate-100 flex flex-col gap-2.5 shadow-inner">
+                <div className="flex justify-between items-center bg-white p-3 rounded-xl border border-slate-50 shadow-[0_2px_8px_rgba(0,0,0,0.01)]">
+                  <div className="flex items-center gap-3">
+                    <span className="text-xs font-bold text-slate-400">09:00</span>
+                    <div>
+                      <h5 className="text-xs font-bold text-primary">Carlos Mendoza</h5>
+                      <p className="text-[10px] text-text">Limpieza dental</p>
+                    </div>
+                  </div>
+                  <span className="text-[9px] font-bold text-accent bg-accent/10 border border-accent/10 px-2 py-0.5 rounded-full">Confirmada</span>
+                </div>
+                <div className="flex justify-between items-center bg-white p-3 rounded-xl border border-slate-50 shadow-[0_2px_8px_rgba(0,0,0,0.01)]">
+                  <div className="flex items-center gap-3">
+                    <span className="text-xs font-bold text-slate-400">11:30</span>
+                    <div>
+                      <h5 className="text-xs font-bold text-primary">Sofía Ruiz</h5>
+                      <p className="text-[10px] text-text">Resina compuesta</p>
+                    </div>
+                  </div>
+                  <span className="text-[9px] font-bold text-amber-600 bg-amber-50 border border-amber-100 px-2 py-0.5 rounded-full">En sala</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bento Card 2: Expediente Clínico (Featured - col-span-3) */}
+          <div className="md:col-span-3 p-8 rounded-[32px] bg-white border border-slate-100 shadow-[0_4px_30px_rgba(0,0,0,0.005)] flex flex-col justify-between transition-all duration-500 hover:shadow-[0_24px_50px_rgba(15,23,42,0.03)] hover:border-slate-200/80 group overflow-hidden relative">
+            <div className="absolute top-0 right-0 w-48 h-48 bg-primary/5 rounded-full blur-2xl pointer-events-none" />
+
+            <div className="relative z-10 flex-1 flex flex-col justify-between">
+              <div>
+                <div className="w-12 h-12 rounded-2xl bg-primary/5 text-primary flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-500">
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-extrabold text-primary mb-3">
+                  Expediente clínico
+                </h3>
+                <p className="text-text text-base leading-relaxed max-w-sm mb-8">
+                  Fichas clínicas digitales y completas de cada paciente. Centraliza antecedentes, evolución de tratamientos, alergias y notas en un solo lugar seguro.
+                </p>
+              </div>
+
+              {/* Patient Record Miniature UI Mockup */}
+              <div className="mt-2 p-4 rounded-2xl bg-[#FAFAFA] border border-slate-100 flex flex-col gap-3 shadow-inner">
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-full bg-primary flex items-center justify-center font-bold text-white text-xs">
+                    SR
+                  </div>
+                  <div>
+                    <h5 className="text-xs font-bold text-primary">Sofía Ruiz</h5>
+                    <p className="text-[10px] text-text">ID: #4019 — Paciente Activo</p>
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-2 text-[10px] pt-1">
+                  <div className="bg-white p-2 rounded-lg border border-slate-100">
+                    <span className="text-slate-400 block font-semibold text-[8px] uppercase tracking-wider">Alergias</span>
+                    <span className="font-bold text-red-600">Penicilina</span>
+                  </div>
+                  <div className="bg-white p-2 rounded-lg border border-slate-100">
+                    <span className="text-slate-400 block font-semibold text-[8px] uppercase tracking-wider">Tratamiento</span>
+                    <span className="font-bold text-primary">Ortodoncia</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Secondary Bento Grid Row (col-span-2 each) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {secondaryModules.map((module, idx) => (
             <div 
               key={idx}
-              className="p-8 rounded-[24px] bg-white border border-slate-100/80 shadow-[0_4px_20px_rgba(0,0,0,0.005)] flex flex-col justify-between transition-all duration-500 hover:shadow-[0_20px_50px_rgba(15,23,42,0.03)] hover:border-slate-200 hover:-translate-y-1 group"
+              className="p-8 rounded-[28px] bg-white border border-slate-100/80 shadow-[0_4px_25px_rgba(0,0,0,0.005)] flex flex-col justify-between transition-all duration-500 hover:shadow-[0_20px_50px_rgba(15,23,42,0.03)] hover:border-slate-200 hover:-translate-y-0.5 group"
             >
               <div>
-                <div className="w-10 h-10 rounded-xl bg-accent/10 text-accent flex items-center justify-center mb-6 group-hover:scale-105 group-hover:bg-accent group-hover:text-white transition-all duration-500">
+                <div className="w-10 h-10 rounded-xl bg-accent/10 text-accent flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-500">
                   {module.icon}
                 </div>
-                <h3 className="text-base font-bold text-primary mb-2.5">
+                <h3 className="text-base font-bold text-primary mb-2">
                   {module.title}
                 </h3>
                 <p className="text-text text-sm leading-relaxed">

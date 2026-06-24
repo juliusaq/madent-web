@@ -66,49 +66,56 @@ export default function BenefitsSection() {
           </h2>
         </div>
 
-        {/* Benefits Dynamic Grid (Stripe/Linear style) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Benefits Grid Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           
-          {/* Featured Card (Spans 2 columns on desktop) */}
+          {/* Featured Card (Linear Editorial style) */}
           {benefits.filter(b => b.featured).map((benefit, idx) => (
             <div 
               key={idx}
-              className="md:col-span-2 p-8 sm:p-12 rounded-[32px] bg-gradient-to-br from-[#FAFAFA] to-[#F1F5F9] border border-slate-100 shadow-[0_4px_30px_rgba(0,0,0,0.01)] flex flex-col justify-between transition-all duration-500 hover:shadow-[0_30px_60px_-15px_rgba(15,23,42,0.05)] hover:border-slate-200 hover:-translate-y-1 relative overflow-hidden group"
+              className="lg:col-span-2 p-10 sm:p-14 rounded-[36px] bg-gradient-to-br from-[#FAFAFA] to-[#F1F5F9] border border-slate-100 flex flex-col justify-between transition-all duration-500 hover:shadow-[0_30px_60px_-15px_rgba(15,23,42,0.04)] hover:border-slate-200 hover:-translate-y-1 relative overflow-hidden group shadow-sm"
             >
-              <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/5 rounded-full blur-3xl pointer-events-none" />
-              <div className="relative z-10">
-                <div className={`w-14 h-14 rounded-2xl ${benefit.bgColor} ${benefit.iconColor} flex items-center justify-center mb-8 shadow-sm group-hover:scale-105 transition-transform duration-500`}>
-                  {benefit.svg}
+              {/* Soft mesh background radial blend */}
+              <div className="absolute top-0 right-0 w-80 h-80 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+
+              <div className="relative z-10 flex-1 flex flex-col justify-between h-full">
+                <div>
+                  <div className={`w-14 h-14 rounded-2xl ${benefit.bgColor} ${benefit.iconColor} flex items-center justify-center mb-10 shadow-sm group-hover:scale-105 transition-transform duration-500`}>
+                    {benefit.svg}
+                  </div>
+                  <h3 className="text-3xl sm:text-4xl font-extrabold text-primary tracking-tight mb-5 leading-none">
+                    {benefit.title}
+                  </h3>
+                  <p className="text-text text-lg sm:text-xl leading-relaxed max-w-xl">
+                    {benefit.description}
+                  </p>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-primary mb-4">
-                  {benefit.title}
-                </h3>
-                <p className="text-text text-lg leading-relaxed max-w-xl">
-                  {benefit.description}
-                </p>
               </div>
             </div>
           ))}
 
-          {/* Regular Cards (Span 1 column on desktop) */}
-          {benefits.filter(b => !b.featured).map((benefit, idx) => (
-            <div 
-              key={idx}
-              className="p-8 rounded-[32px] bg-[#FAFAFA]/70 border border-slate-100 shadow-[0_4px_25px_rgba(0,0,0,0.005)] flex flex-col justify-between transition-all duration-500 hover:shadow-[0_24px_50px_rgba(15,23,42,0.04)] hover:border-slate-200 hover:bg-white hover:-translate-y-1 group"
-            >
-              <div>
-                <div className={`w-12 h-12 rounded-xl ${benefit.bgColor} ${benefit.iconColor} flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-500`}>
-                  {benefit.svg}
+          {/* Regular Cards */}
+          <div className="flex flex-col gap-8">
+            {benefits.filter(b => !b.featured).map((benefit, idx) => (
+              <div 
+                key={idx}
+                className="p-8 rounded-[28px] bg-[#FAFAFA]/70 border border-slate-100 shadow-[0_4px_25px_rgba(0,0,0,0.005)] flex flex-col justify-between transition-all duration-500 hover:shadow-[0_20px_45px_rgba(15,23,42,0.03)] hover:border-slate-200 hover:bg-white hover:-translate-y-0.5 group"
+              >
+                <div>
+                  <div className={`w-12 h-12 rounded-xl ${benefit.bgColor} ${benefit.iconColor} flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-500`}>
+                    {benefit.svg}
+                  </div>
+                  <h3 className="text-xl font-bold text-primary mb-3">
+                    {benefit.title}
+                  </h3>
+                  <p className="text-text text-sm sm:text-base leading-relaxed">
+                    {benefit.description}
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold text-primary mb-3">
-                  {benefit.title}
-                </h3>
-                <p className="text-text text-base leading-relaxed">
-                  {benefit.description}
-                </p>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
 
         </div>
 

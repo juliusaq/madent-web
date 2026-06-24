@@ -34,7 +34,7 @@ export default function HowItWorksSection() {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-20 sm:mb-24">
+        <div className="max-w-3xl mb-24">
           <span className="text-xs font-bold text-accent uppercase tracking-widest block mb-4">
             Paso a Paso
           </span>
@@ -43,35 +43,31 @@ export default function HowItWorksSection() {
           </h2>
         </div>
 
-        {/* Steps Flow (Connected Timeline Grid) */}
-        <div className="relative">
+        {/* Timeline Sequence Layout (Notion / Apple style) - Open space, no heavy borders */}
+        <div className="relative pl-6 lg:pl-0">
           
-          {/* Horizontal Connecting Line (Desktop Only) */}
-          <div className="absolute top-[40px] left-[5%] right-[5%] h-0.5 bg-slate-200/70 hidden lg:block z-0 pointer-events-none" />
+          {/* Horizontal Connector Line (Desktop Only) */}
+          <div className="absolute top-[28px] left-[4%] right-[4%] h-[1px] bg-slate-200 hidden lg:block z-0 pointer-events-none" />
+
+          {/* Vertical Connector Line (Mobile/Tablet Only) */}
+          <div className="absolute left-[8px] lg:left-0 top-[28px] bottom-[28px] w-[1px] bg-slate-200 lg:hidden pointer-events-none" />
           
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-6 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-10 relative z-10">
             {steps.map((step, idx) => (
               <div 
                 key={idx}
-                className="relative p-6 sm:p-8 rounded-[28px] bg-white border border-slate-100 shadow-[0_4px_25px_rgba(0,0,0,0.005)] flex flex-col justify-between transition-all duration-500 hover:shadow-[0_20px_50px_rgba(15,23,42,0.03)] hover:-translate-y-0.5 group"
+                className="flex flex-row lg:flex-col items-start gap-6 lg:gap-8 group"
               >
-                {/* Vertical Connector Line (Mobile/Tablet Only, drawn between cards) */}
-                {idx < steps.length - 1 && (
-                  <div className="absolute left-[38px] top-[72px] bottom-[-32px] w-0.5 bg-slate-200/70 lg:hidden pointer-events-none" />
-                )}
-
+                {/* Step Number Emblem */}
+                <div className="w-6 h-6 rounded-full bg-slate-200 text-primary font-bold text-xs flex items-center justify-center shrink-0 border border-slate-300 relative z-10 bg-[#FAFAFA] group-hover:bg-accent group-hover:text-white group-hover:border-accent transition-all duration-300">
+                  {step.number}
+                </div>
+                
+                {/* Text Content */}
                 <div>
-                  {/* Step Number Badge */}
-                  <div className="w-11 h-11 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm mb-6 relative z-10 shadow-sm border-4 border-white group-hover:scale-105 group-hover:bg-accent transition-all duration-500">
-                    {step.number}
-                  </div>
-                  
-                  {/* Step Title */}
                   <h3 className="text-lg font-bold text-primary mb-3">
                     {step.title}
                   </h3>
-                  
-                  {/* Step Description */}
                   <p className="text-text text-sm leading-relaxed">
                     {step.description}
                   </p>
