@@ -16,7 +16,7 @@ export default function Header() {
         </Link>
 
         {/* Navigation Links - Hidden on Mobile */}
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-text">
+        <nav className="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium text-text">
           <Link href="/#problema" className="hover:text-primary transition-colors duration-200">
             El Problema
           </Link>
@@ -28,6 +28,9 @@ export default function Header() {
           </Link>
           <Link href="/#como-funciona" className="hover:text-primary transition-colors duration-200">
             Cómo funciona
+          </Link>
+          <Link href="/nosotros" className="hover:text-primary transition-colors duration-200">
+            Nosotros
           </Link>
         </nav>
 

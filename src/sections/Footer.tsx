@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -51,7 +52,9 @@ export default function Footer() {
             </h4>
             <ul className="flex flex-col gap-3 text-sm text-text font-medium">
               <li>
-                <span className="text-slate-400">Sobre nosotros</span>
+                <Link href="/nosotros" className="hover:text-primary transition-colors duration-300">
+                  Sobre nosotros
+                </Link>
               </li>
               <li>
                 <span className="text-slate-400">Carreras</span>
