@@ -79,7 +79,9 @@ export default function Footer() {
                 <span className="text-slate-400">Guías para odontólogos</span>
               </li>
               <li>
-                <span className="text-slate-400">Centro de ayuda</span>
+                <Link href="/ayuda" className="hover:text-primary transition-colors duration-300">
+                  Centro de ayuda
+                </Link>
               </li>
             </ul>
           </div>

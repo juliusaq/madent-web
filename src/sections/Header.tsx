@@ -16,18 +16,9 @@ export default function Header() {
         </Link>
 
         {/* Navigation Links - Hidden on Mobile */}
-        <nav className="hidden md:flex items-center gap-4 lg:gap-6 xl:gap-8 text-sm font-medium text-text">
-          <Link href="/#problema" className="hover:text-primary transition-colors duration-200">
-            El Problema
-          </Link>
+        <nav className="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium text-text">
           <Link href="/funciones" className="hover:text-primary transition-colors duration-200">
             Funciones
-          </Link>
-          <Link href="/#beneficios" className="hover:text-primary transition-colors duration-200">
-            Beneficios
-          </Link>
-          <Link href="/#como-funciona" className="hover:text-primary transition-colors duration-200">
-            Cómo funciona
           </Link>
           <Link href="/nosotros" className="hover:text-primary transition-colors duration-200">
             Nosotros
@@ -37,6 +28,9 @@ export default function Header() {
           </Link>
           <Link href="/blog" className="hover:text-primary transition-colors duration-200">
             Blog
+          </Link>
+          <Link href="/ayuda" className="hover:text-primary transition-colors duration-200">
+            Ayuda
           </Link>
         </nav>
 
